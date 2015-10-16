@@ -128,13 +128,24 @@ p{
 	border: 3px solid yellow;
 }
 
+#player2Card {
+	float: right;
+	margin-right: 100px;
+	margin-top: -217px;
+	width: 150px;
+	height: 211px;
+	border: 3px solid yellow;
+}
+
 #player1Card img, #player2Card img {
 	width: 100%;
 }
 
 
+
 #startButton {
-	margin-top: 130px;
+	margin-top: 140px;
+	margin-right: 252px;
 	width: 60px;
 	height: 60px;
 	border-radius: 20px;
@@ -143,14 +154,16 @@ p{
 	background-color: #006600;
 }
 
-#player2Card {
-	float: right;
-	margin-right: 100px;
-	margin-top: 40px;
-	width: 150px;
-	height: 211px;
-	border: 3px solid yellow;
+#warButton {
+	margin-right: 252px;
+	width: 60px;
+	height: 60px;
+	border-radius: 20px;
+	background-image: url("../images/buttonwar.png");
+	background-size: 100%;
+	background-color: #006600;
 }
+
 
 #middleBottom {
 	width: 600px;
@@ -168,6 +181,10 @@ p{
 
 }
 
+#player1WarCard img, #player2WarCard img {
+	width: 100%;
+}
+
 #player1WarExtra{
 	margin-left: 20px;
 	border: 2px solid yellow;
@@ -177,7 +194,7 @@ p{
 	background-size: contain;
 }
 
-#player1WarDecison{
+#player1WarCard {
 	margin-left: 18px;
 	border: 2px solid yellow;
 	float: left;
@@ -186,7 +203,7 @@ p{
 	background-size: contain;
 }
 
-#player2WarDecison {
+#player2WarCard {
 	margin-right: 18px;
 	border: 2px solid yellow;
 	float: right;
