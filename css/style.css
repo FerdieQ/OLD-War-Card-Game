@@ -1,5 +1,6 @@
 html {
-  max-width: 750px;
+  max-width: 800px;
+  max-height: 750px;
   margin: 0 auto;
   position: relative; 
 }
@@ -7,6 +8,7 @@ html {
 body{
 	background-image: url("../images/background.jpg");
 	background-size: 1500px;
+	background-height: 1000px;
 	color: white;
 	font-family: "Arial Black", serif;
 	padding-left: 40px;
@@ -144,7 +146,7 @@ p{
 
 
 #startButton {
-	margin-top: 140px;
+	margin-top: 130px;
 	margin-right: 252px;
 	width: 60px;
 	height: 60px;
@@ -155,6 +157,7 @@ p{
 }
 
 #warButton {
+	margin-top: 10px;
 	margin-right: 252px;
 	width: 60px;
 	height: 60px;
@@ -185,22 +188,12 @@ p{
 	width: 100%;
 }
 
-#player1WarExtra{
-	margin-left: 20px;
-	border: 2px solid yellow;
-	float: left;
-	width: 75px;
-	height: 105px;
-	background-size: contain;
-}
-
 #player1WarCard {
 	margin-left: 18px;
 	border: 2px solid yellow;
 	float: left;
 	width: 75px;
 	height: 105px;
-	background-size: contain;
 }
 
 #player2WarCard {
@@ -209,7 +202,18 @@ p{
 	float: right;
 	width: 75px;
 	height: 105px;
-	background-size: contain;
+}
+
+#player1WarExtra img, #player2WarExtra img {
+	width: 100%;
+}
+
+#player1WarExtra{
+	margin-left: 20px;
+	border: 2px solid yellow;
+	float: left;
+	width: 75px;
+	height: 105px;
 }
 
 #player2WarExtra {
@@ -218,7 +222,6 @@ p{
 	float: right;
 	width: 75px;
 	height: 105px;
-	background-size: contain;
 }
 
 #player2Deck {

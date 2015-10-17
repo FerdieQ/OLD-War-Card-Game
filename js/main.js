@@ -85,15 +85,18 @@ function playerBattle() {
     $("#outcome").text("Player 1 WINS!");
     player1Score = player1Score+2;
     console.log(2);
+    console.log(player1Card.image);
   }
   if (player1Card.value < player2Card.value) {
     $("#outcome").text("Player 2 WINS!");
     player2Score = player2Score+2;
     console.log(2);
+    console.log(player2Card.image);
   }
   if (player1Card.value === player2Card.value) {
     $("#outcome").text("Play WAR!");
-    console.log("tie");     
+    console.log("tie"); 
+        
   } 
 }
 
@@ -103,11 +106,13 @@ function playerWar() {
     $("#outcome").text("Player 1 Won War!");
     player1Score = player1Score+6;
     console.log(6);
+    console.log(player1Card.image);
   }
   if (player1Card.value < player2Card.value) {
     $("#outcome").text("Player 2 Won War!");
     player2Score = player2Score+6;
     console.log(6);
+    console.log(player2Card.image);
   }
   if (player1Card.value === player2Card.value) {
     $("#outcome").text("Play WAR!");
@@ -123,10 +128,11 @@ function dealCards(){
   player2Card = cards[1]; 
   playerBattle();
   renderDealCards();
+  clearWarCards();
 }
 
 //Deal War Cards
-function dealWarCards () {
+function dealWarCards() {
   shuffleDeck(cards);
   player1Card = cards[0]; 
   player2Card = cards[1];
@@ -134,7 +140,8 @@ function dealWarCards () {
   renderWarCards();
 }
 
-//Deal Cards are shown
+
+//Deal Cards Are Shown
 function renderDealCards() {
   $("#player1Card img").attr("src",player1Card.image);
   $("#player2Card img").attr("src",player2Card.image);
@@ -142,12 +149,22 @@ function renderDealCards() {
   $("#player2Score").text(player2Score);  
 }
 
-//War Cards are shown
+//War Cards Are Shown
 function renderWarCards() {
   $("#player1WarCard img").attr("src",player1Card.image);
   $("#player2WarCard img").attr("src",player2Card.image);
+  $("#player1WarExtra img").attr("src","images/card.png");
+  $("#player2WarExtra img").attr("src","images/card.png");
   $("#player1Score").text(player1Score);
   $("#player2Score").text(player2Score); 
+}
+
+//War Cards Are Cleared
+function clearWarCards() {
+  $("#player1WarCard img").attr("src", " ");
+  $("#player2WarCard img").attr("src", " ");
+  $("#player1WarExtra img").attr("src", " ");
+  $("#player2WarExtra img").attr("src", " ");
 }
 
 //Start Button
