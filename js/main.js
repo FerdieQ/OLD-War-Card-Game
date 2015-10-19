@@ -5,8 +5,8 @@ var player1Card;
 var player2Card;
 var player1Score=0;
 var player2Score=0;
-var player1Wins
-var player2Wins
+var player1Wins=0;
+var player2Wins=0;
 
 
 //Card Values
@@ -116,30 +116,46 @@ function playerWar() {
   }
   if (player1Card.value === player2Card.value) {
     $("#outcome").text("Play WAR!");
-    player2Score = player2Score+6;
     console.log("tie");     
   } 
 }
 
 //Deal Cards
 function dealCards(){
-  shuffleDeck(cards);
-  player1Card = cards[0]; 
-  player2Card = cards[1]; 
-  playerBattle();
-  renderDealCards();
-  clearWarCards();
+  if ((player1Score<26) || (player2Score<26)) {
+    shuffleDeck(cards);
+    player1Card = cards[0]; 
+    player2Card = cards[1]; 
+    playerBattle();
+    renderDealCards();
+    clearWarCards();
+  }
+  if (player1Score>=26) {
+    $("#outcome").text("GAME! Player 1 Wins!");
+  }
+  if (player2Score>=26) {
+    $("#outcome").text("GAME! Player 2 Wins!");
+  }
+
 }
 
 //Deal War Cards
 function dealWarCards() {
-  shuffleDeck(cards);
-  player1Card = cards[0]; 
-  player2Card = cards[1];
-  playerWar(); 
-  renderWarCards();
-}
+  if ((player1Score<26) || (player2Score<26)) {
+    shuffleDeck(cards);
+    player1Card = cards[0]; 
+    player2Card = cards[1]; 
+    playerWar(); 
+    renderWarCards();
+  }
+  if (player1Score>=26) {
+    $("#outcome").text("GAME! Player 1 Wins!");
+  }
+  if (player2Score>=26) {
+    $("#outcome").text("GAME! Player 2 Wins!");
+  }
 
+}
 
 //Deal Cards Are Shown
 function renderDealCards() {
