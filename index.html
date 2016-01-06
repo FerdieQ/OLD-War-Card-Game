@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>War!</title>
+	<link rel="stylesheet" href="css/style.css"></link>
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div id="board">
+		<div id="top">
+			<p id="player1Wins">Score</p>
+			<p id="player1Score">00</p>
+			<p id="player2Score">00</p>
+			<p id="player2Wins">Score</p>
+		</div>
+
+		<div id="middleTop">
+			<p id="player1Name">Player 1</p>
+			<p id="player2Name">Player 2</p>
+			<p type="text" id="outcome">Outcome</p>
+		</div>
+
+		<div id="middle">
+			<div type="file" id="player1Card"><img src="images/card.png"></div>
+			<button id="startButton"></button>
+			<div type="file" id="player2Card"><img src="images/card.png"></div>	
+
+		</div>
+
+		<div id="middleBottom">
+			<div type="file" class="smallCard" id="player1Deck"></div>
+			<div type="file" class="smallCard" id="player1WarExtra">Player 1 War Card 1</div>
+			<div type="file" class="smallCard" id="player1WarDecison">Player 1 War Card 2</div>
+			<div type="file" class="smallCard" id="player2Deck"></div>
+			<div type="file" class="smallCard" id="player2WarExtra">Player 2 War Card 1</div>
+			<div type="file" class="smallCard" id="player2WarDecison">Player 2 War Card 2</div>
+
+		</div>
+
+		<div id="rules">
+			Welcome to War! A standard 52 card desk is divided evenly, with each player receiving 26 cards. Each player takes a turn by pressing the Red button on the table. The player with the higher card wins and collects both cards. Each card is assigned their face value. Jack, Queen, and King have their respective value with Ace being the highest value. The Player with the most cards collected wins.  
+		</div>	
+	</div>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
