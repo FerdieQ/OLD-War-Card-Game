@@ -1,4 +1,4 @@
-![](images/button.jpg)
+![](images/button.jpeg)
 
 #The Game of War
 
