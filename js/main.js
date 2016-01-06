@@ -5,8 +5,8 @@ var player1Card;
 var player2Card;
 var player1Score=0;
 var player2Score=0;
-var player1Wins
-var player2Wins
+var player1Wins=0;
+var player2Wins=0;
 
 
 //Card Values
@@ -68,8 +68,8 @@ var cards = [
 
 //Suffle Deck Function
 function shuffleDeck(cards) {
-  var i = 0, 
-      j = 0, 
+  var i = 0,
+      j = 0,
       temp = null
   for (i = cards.length - 1; i > 0; i -= 1) {
     j = Math.floor(Math.random() * (i + 1))
@@ -85,37 +85,106 @@ function playerBattle() {
     $("#outcome").text("Player 1 WINS!");
     player1Score = player1Score+2;
     console.log(2);
+    console.log(player1Card.image);
   }
   if (player1Card.value < player2Card.value) {
     $("#outcome").text("Player 2 WINS!");
     player2Score = player2Score+2;
     console.log(2);
+    console.log(player2Card.image);
   }
   if (player1Card.value === player2Card.value) {
-    $("#outcome").text("Play WAR!");      
-  } 
+    $("#outcome").text("Play WAR!");
+    console.log("tie");
+
+  }
 }
 
+//Function Player War
+function playerWar() {
+  if (player1Card.value > player2Card.value) {
+    $("#outcome").text("Player 1 Won War!");
+    player1Score = player1Score+6;
+    console.log(6);
+    console.log(player1Card.image);
+  }
+  if (player1Card.value < player2Card.value) {
+    $("#outcome").text("Player 2 Won War!");
+    player2Score = player2Score+6;
+    console.log(6);
+    console.log(player2Card.image);
+  }
+  if (player1Card.value === player2Card.value) {
+    $("#outcome").text("Play WAR!");
+    console.log("tie");
+  }
+}
 
-//Deal Cards Function
+//Deal Cards
 function dealCards(){
-  shuffleDeck(cards);
-  player1Card = cards[0]; 
-  player2Card = cards[1]; 
-  playerBattle();
-  render();
+  if ((player1Score<26) || (player2Score<26)) {
+    shuffleDeck(cards);
+    player1Card = cards[0];
+    player2Card = cards[1];
+    playerBattle();
+    renderDealCards();
+    clearWarCards();
+  }
+  if (player1Score>=26) {
+    $("#outcome").text("GAME! Player 1 Wins!");
+  }
+  if (player2Score>=26) {
+    $("#outcome").text("GAME! Player 2 Wins!");
+  }
+
 }
 
+//Deal War Cards
+function dealWarCards() {
+  if ((player1Score<26) || (player2Score<26)) {
+    shuffleDeck(cards);
+    player1Card = cards[0];
+    player2Card = cards[1];
+    playerWar();
+    renderWarCards();
+  }
+  if (player1Score>=26) {
+    $("#outcome").text("GAME! Player 1 Wins!");
+  }
+  if (player2Score>=26) {
+    $("#outcome").text("GAME! Player 2 Wins!");
+  }
 
-//Cards are shown
-function render() {
+}
+
+//Deal Cards Are Shown
+function renderDealCards() {
   $("#player1Card img").attr("src",player1Card.image);
   $("#player2Card img").attr("src",player2Card.image);
   $("#player1Score").text(player1Score);
   $("#player2Score").text(player2Score);
-
 }
 
+//War Cards Are Shown
+function renderWarCards() {
+  $("#player1WarCard img").attr("src",player1Card.image);
+  $("#player2WarCard img").attr("src",player2Card.image);
+  $("#player1WarExtra img").attr("src","images/card.png");
+  $("#player2WarExtra img").attr("src","images/card.png");
+  $("#player1Score").text(player1Score);
+  $("#player2Score").text(player2Score);
+}
+
+//War Cards Are Cleared
+function clearWarCards() {
+  $("#player1WarCard img").attr("src", " ");
+  $("#player2WarCard img").attr("src", " ");
+  $("#player1WarExtra img").attr("src", " ");
+  $("#player2WarExtra img").attr("src", " ");
+}
 
 //Start Button
 $("#startButton").click(dealCards);
+
+//War Button
+$("#warButton").click(dealWarCards);

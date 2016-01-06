@@ -9,38 +9,39 @@
 <body>
 	<div id="board">
 		<div id="top">
-			<p id="player1Wins">Score</p>
-			<p id="player1Score">00</p>
-			<p id="player2Score">00</p>
-			<p id="player2Wins">Score</p>
+			<p id="player1Wins">Rounds Won</p>
+			<p id="player1Score">Score</p>
+			<p id="player2Score">Score</p>
+			<p id="player2Wins">Rounds Won</p>
 		</div>
 
 		<div id="middleTop">
 			<p id="player1Name">Player 1</p>
 			<p id="player2Name">Player 2</p>
-			<p type="text" id="outcome">Outcome</p>
+			<p type="text" id="outcome">Let's Play WAR!</p>
 		</div>
 
 		<div id="middle">
 			<div type="file" id="player1Card"><img src="images/card.png"></div>
 			<button id="startButton"></button>
-			<div type="file" id="player2Card"><img src="images/card.png"></div>	
+			<button id="warButton"></button>
+			<div type="file" id="player2Card"><img src="images/card.png"></div>
 
 		</div>
 
 		<div id="middleBottom">
 			<div type="file" class="smallCard" id="player1Deck"></div>
-			<div type="file" class="smallCard" id="player1WarExtra">Player 1 War Card 1</div>
-			<div type="file" class="smallCard" id="player1WarDecison">Player 1 War Card 2</div>
+			<div type="file" id="player1WarExtra"><img src=" "></div>
+			<div type="file" id="player1WarCard"><img src=" "></div>
 			<div type="file" class="smallCard" id="player2Deck"></div>
-			<div type="file" class="smallCard" id="player2WarExtra">Player 2 War Card 1</div>
-			<div type="file" class="smallCard" id="player2WarDecison">Player 2 War Card 2</div>
+			<div type="file" id="player2WarExtra"><img src=" "></div>
+			<div type="file" id="player2WarCard"><img src=" "></div>
 
 		</div>
 
 		<div id="rules">
-			Welcome to War! A standard 52 card desk is divided evenly, with each player receiving 26 cards. Each player takes a turn by pressing the Red button on the table. The player with the higher card wins and collects both cards. Each card is assigned their face value. Jack, Queen, and King have their respective value with Ace being the highest value. The Player with the most cards collected wins.  
-		</div>	
+			Welcome to War! A standard 52 card desk is divided evenly, with each player receiving 26 cards. Each player takes a turn by pressing the Red button on the table. The player with the higher card wins and collects both cards. Each card is assigned their face value. Jack, Queen, and King have their respective value with Ace being the highest value. The Player with the most cards collected wins.
+		</div>
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
